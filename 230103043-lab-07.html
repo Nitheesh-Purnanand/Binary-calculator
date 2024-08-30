@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Binary Calculator</title>
+<link rel="stylesheet" href="230103043-lab-07.css">
+</head>
+<body>
+<div class="big-conatiner">
+<div class="conatiner">
+<form>
+<input type="text" class="screen">
+<div class="radio">
+<label><input type="radio" name="select" value="binary" onclick=setbin()>Display in Binary</label>
+<label><input type="radio" name="select" value="decimal" onclick=setdec()>Display in Binary and Decimal</label>
+</div>
+<table class="buttons">
+<tr><td>
+<button type="button" class="zero button1" onclick=append0()>0</button>
+<button type="button" class="one button1" onclick=append1()>1</button>
+<button type="button" class="equal button" onclick=get_answer()><input value="=" type="button"></button>
+<button type="button" class="reset button">Reset</button>
+<button type="button" class="prev_op button">&lt;&lt;Prev Operation</button>
+</td></tr>
+<tr><td>
+<button type="button" class="logic_and button" onclick=appendland()>Logical AND</button>
+<button type="button" class="logic_or button" onclick=appendlor()>Logical OR</button>
+<button type="button" class="logic_not button" onclick=appendnot()>Logical NOT</button>
+<button type="button" class="next_op button">Next Operation&gt;&gt;</button>
+</td></tr>
+<tr><td>
+<button type="button" class="bit_and button"  onclick=appendand()>Bitwise AND</button>
+<button type="button" class="bit_or button"  onclick=appendor()>Bitwise OR</button>
+<button type="button" class="bit_xor button" onclick=appendxor()>Bitwise XOR</button>
+<button type="button" class="bit_not button">Bitwise NOT</button>
+</td></tr>
+<tr><td>
+<button type="button" class="right_shift button" onclick=append_r_s()>Right Shift</button>
+<button type="button" class="left_shift button" onclick=append_l_s()>Left Shift</button>
+<button type="button" class="unsigned_right_shift button2" onclick=appendURS()>Unsigned Right Shift</button>
+</td></tr>
+</table></form>
+</div><button class="reset_page"><a href="/230103043-lab-07.html">reset</a></button>
+</div>
+<script src="230103043-lab-07.js"></script>
+</body>
+</html>
