@@ -59,23 +59,24 @@ let appendURS = () => { str += '>>>'; scr.value = str; }
 let setbin = () =>{ flag = 0;}
 let setdec = () =>{ flag = 1;}
 let get_answer = () => {
+if(flag === 0){
 if (str.includes("!")) {
 let [binary1, binary2] = str.split("!");
 let num2 = parseInt(binary2, 2);
 let result = !num2;
 scr.value = str + ' = ' + result.toString(2);}
 else if (str.includes("&&")) {
-    let [binary1, binary2] = str.split("&&");
-    let num1 = parseInt(binary1, 2);
-    let num2 = parseInt(binary2, 2);
-    let result = num1 && num2;
-    scr.value = str + ' = ' + result.toString();
+let [binary1, binary2] = str.split("&&");
+let num1 = parseInt(binary1, 2);
+let num2 = parseInt(binary2, 2);
+let result = Boolean(num1) && Boolean(num2);
+scr.value = str + ' = ' + result.toString();
 }
 else if (str.includes("||")) {
 let [binary1, binary2] = str.split("||");
 let num1 = parseInt(binary1, 2);
 let num2 = parseInt(binary2, 2);
-let result = num1 || num2;
+let result = Boolean(num1) || Boolean(num2);
 scr.value = str + ' = ' + result.toString(2);}
 else if (str.includes("&")) {
 let [binary1, binary2] = str.split("&");
@@ -120,5 +121,73 @@ let [binary1, binary2] = str.split("!");
 let num2 = parseInt(binary2, 2);    
 let result = ~num2;
 scr.value = str + ' = ' + result.toString(2);
+}
+}
+
+
+else{
+if (str.includes("!")) {
+let [binary1, binary2] = str.split("!");
+let num2 = parseInt(binary2, 2);
+let result = !num2;
+scr.value = str + ' = ' + result.toString(2);}
+else if (str.includes("&&")) {
+let [binary1, binary2] = str.split("&&");
+let num1 = parseInt(binary1, 2);
+let num2 = parseInt(binary2, 2);
+let result = Boolean(num1) && Boolean(num2);
+scr.value = str + ' = ' + result.toString();
+}
+else if (str.includes("||")) {
+let [binary1, binary2] = str.split("||");
+let num1 = parseInt(binary1, 2);
+let num2 = parseInt(binary2, 2);
+let result = Boolean(num1) || Boolean(num2);
+scr.value = str + ' = ' + result.toString(2);}
+else if (str.includes("&")) {
+let [binary1, binary2] = str.split("&");
+let num1 = parseInt(binary1, 2);
+let num2 = parseInt(binary2, 2);
+let result = num1 & num2;
+scr.value = str + ' = Binary: ' + result.toString(2) +" Decimal: " + result.toString(10);
+} else if (str.includes("|")) {
+let [binary1, binary2] = str.split("|");
+let num1 = parseInt(binary1, 2);
+let num2 = parseInt(binary2, 2);
+let result = num1 | num2;
+scr.value = str + ' = Binary: ' + result.toString(2) +" Decimal: " + result.toString(10);
+} else if (str.includes("^")) {
+let [binary1, binary2] = str.split("^");
+let num1 = parseInt(binary1, 2);
+let num2 = parseInt(binary2, 2);
+let result = num1 ^ num2;
+scr.value = str + ' = Binary: ' + result.toString(2) +" Decimal: " + result.toString(10);
+} else if (str.includes("<<")) {
+let [binary1, binary2] = str.split("<<");
+let num1 = parseInt(binary1, 2);
+let num2 = parseInt(binary2, 2);
+let result = num1 << num2;
+scr.value = str + ' = Binary: ' + result.toString(2) +" Decimal: " + result.toString(10);
+} else if (str.includes(">>>")) {
+let [binary1, binary2] = str.split(">>>");
+let num1 = parseInt(binary1, 2);
+let num2 = parseInt(binary2, 2);
+let result = num1 >>> num2;
+scr.value = str + ' = Binary: ' + result.toString(2) +" Decimal: " + result.toString(10);
+}
+else if (str.includes(">>")) {
+let [binary1, binary2] = str.split(">>");
+let num1 = parseInt(binary1, 2);
+let num2 = parseInt(binary2, 2);
+let result = num1 >> num2;
+scr.value = str + ' = Binary: ' + result.toString(2) +" Decimal: " + result.toString(10);
+}
+else if (str.includes("~")) {
+let [binary1, binary2] = str.split("!");
+let num2 = parseInt(binary2, 2);    
+let result = ~num2;
+scr.value = str + ' = Binary: ' + result.toString(2) +" Decimal: " + result.toString(10);
+}
+
 }
 }
